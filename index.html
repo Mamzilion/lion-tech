@@ -3,91 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Lion Tech Holding | Daniel Dilane</title>
+    <title>Lion Tech Holding | Mama Daniel Dilane</title>
     <style>
+        :root {
+            --gold: #d4af37;
+            --dark: #0a0a0a;
+            --card-bg: #111;
+        }
         body {
-            background-color: #0a0a0a; /* Noir profond */
+            background-color: var(--dark);
             color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Roboto, sans-serif;
             margin: 0;
-            text-align: center;
+            line-height: 1.6;
         }
         header {
-            padding: 50px 20px;
-            border-bottom: 2px solid #d4af37; /* Ligne Or */
-        }
-        .logo-lion {
-            font-size: 50px;
-            color: #d4af37; /* Couleur Or */
-            margin-bottom: 10px;
-        }
-        h1 { color: #d4af37; letter-spacing: 2px; }
-        .container {
+            height: 80vh;
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             justify-content: center;
-            padding: 40px;
-            gap: 20px;
+            align-items: center;
+            border-bottom: 2px solid var(--gold);
+            background: radial-gradient(circle, #1a1a1a 0%, #0a0a0a 100%);
         }
-        .card {
-            background: #1a1a1a;
-            border: 1px solid #333;
-            border-radius: 10px;
+        .logo-img {
+            max-width: 200px;
+            height: auto;
+            filter: drop-shadow(0px 0px 10px rgba(212, 175, 55, 0.5));
+            margin-bottom: 20px;
+        }
+        h1 { color: var(--gold); letter-spacing: 4px; text-transform: uppercase; margin: 10px 0; }
+        
+        /* Sections Détail */
+        .section {
+            padding: 80px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            border-bottom: 1px solid #222;
+            transition: 0.4s;
+        }
+        .section:hover {
+            background: rgba(212, 175, 55, 0.02);
+        }
+        .section h2 {
+            color: var(--gold);
+            font-size: 2.5em;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            text-align: left;
+            margin-top: 30px;
+        }
+        .feature-item {
+            background: var(--card-bg);
             padding: 20px;
-            width: 300px;
+            border-left: 4px solid var(--gold);
+            border-radius: 0 10px 10px 0;
             transition: 0.3s;
         }
-        .card:hover {
-            border-color: #d4af37;
-            transform: translateY(-10px);
+        .feature-item:hover {
+            transform: translateX(10px);
+            background: #1a1a1a;
         }
-        .icon { font-size: 40px; margin-bottom: 15px; }
-        .btn {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px;
-            background-color: #d4af37;
+
+        /* Contact Section */
+        #contact {
+            padding: 100px 20px;
+            background: var(--gold);
             color: #000;
+        }
+        #contact h2 { color: #000; }
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        .contact-btn {
+            padding: 15px 35px;
+            background: #000;
+            color: var(--gold);
             text-decoration: none;
             font-weight: bold;
-            border-radius: 5px;
+            border-radius: 50px;
+            font-size: 1.1em;
+            transition: 0.3s;
         }
-        footer { padding: 30px; font-size: 0.8em; color: #666; }
+        .contact-btn:hover {
+            transform: scale(1.1);
+            background: #222;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        footer { padding: 40px; color: #555; text-align: center; }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo-lion">🦁</div>
+    <img src="ton-logo.png" alt="Lion Tech Logo" class="logo-img">
     <h1>LION TECH HOLDING</h1>
-    <p>Dirigé par <strong>Mama Daniel Dilane</strong></p>
+    <p>Expertise Multidisciplinaire | <strong>Mama Daniel Dilane</strong></p>
 </header>
 
-<div class="container">
-    <div class="card">
-        <div class="icon">🛡️</div>
-        <h3>DevSecOps</h3>
-        <p>Expertise en Flutter, Node.js et sécurisation des infrastructures réseaux.</p>
-        <a href="#" class="btn">Voir Projets</a>
+<section class="section">
+    <h2>🛡️ DevSecOps & Ingénierie</h2>
+    <div class="content-grid">
+        <div class="feature-item">
+            <strong>Développement Full-Stack :</strong> Conception d'applications robustes avec Flutter et Node.js (Projet SAP BTP).
+        </div>
+        <div class="feature-item">
+            <strong>Cybersécurité :</strong> Audits de vulnérabilité, sécurisation des infrastructures réseaux et simulation de défense.
+        </div>
+        <div class="feature-item">
+            <strong>Automatisation :</strong> Mise en place de pipelines CI/CD et gestion de bases de données MongoDB sécurisées.
+        </div>
     </div>
+</section>
 
-    <div class="card">
-        <div class="icon">📈</div>
-        <h3>Trading & Finance</h3>
-        <p>Analyse des marchés financiers et stratégies algorithmiques haute performance.</p>
-        <a href="#" class="btn">Services Finance</a>
+<section class="section">
+    <h2>📈 Trading & Marchés Financiers</h2>
+    <div class="content-grid">
+        <div class="feature-item">
+            <strong>Analyse Quantitative :</strong> Étude approfondie des graphiques et indicateurs pour une prise de décision stratégique.
+        </div>
+        <div class="feature-item">
+            <strong>Algorithmes de Trading :</strong> Développement d'outils d'aide à la décision pour optimiser la rentabilité.
+        </div>
+        <div class="feature-item">
+            <strong>Gestion de Portefeuille :</strong> Stratégies de couverture et diversification d'actifs financiers mondiaux.
+        </div>
     </div>
+</section>
 
-    <div class="card">
-        <div class="icon">🎥</div>
-        <h3>Digital Marketing</h3>
-        <p>Création de contenu visuel (Photo/Vidéo) et branding stratégique.</p>
-        <a href="#" class="btn">Portfolio Créatif</a>
+<section class="section">
+    <h2>🎥 Marketing Digital & Création</h2>
+    <div class="content-grid">
+        <div class="feature-item">
+            <strong>Production Audiovisuelle :</strong> Shooting photo professionnel et montage vidéo haute définition.
+        </div>
+        <div class="feature-item">
+            <strong>Branding :</strong> Création d'identités visuelles percutantes et gestion de l'image de marque.
+        </div>
+        <div class="feature-item">
+            <strong>Stratégie Digitale :</strong> Campagnes publicitaires et optimisation de la présence sur les réseaux sociaux.
+        </div>
     </div>
-</div>
+</section>
+
+<section id="contact">
+    <h2>🦁 Contactez le Siège</h2>
+    <p>Prêt à collaborer avec Lion Tech Holding ? Choisissez votre canal :</p>
+    <div class="contact-links">
+        <a href="https://wa.me/237XXXXXXXXX" class="contact-btn">WhatsApp Direct</a>
+        <a href="https://www.linkedin.com/in/votre-profil" class="contact-btn">LinkedIn</a>
+        <a href="mailto:votre-email@gmail.com" class="contact-btn">Email Pro</a>
+    </div>
+</section>
 
 <footer>
-    &copy; 2026 Lion Tech Holding - Daniel Dilane. Tous droits réservés.
+    &copy; 2026 Lion Tech Holding - Mama Daniel Dilane. Tous droits réservés.
 </footer>
 
 </body>
