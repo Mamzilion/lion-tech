@@ -18,23 +18,26 @@
             line-height: 1.6;
         }
         header {
-            height: 80vh;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             border-bottom: 2px solid var(--gold);
-            background: radial-gradient(circle, #1a1a1a 0%, #0a0a0a 100%);
+            /* Ajout du Lion en Background */
+            background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.7)), 
+                        url('logo-lion.png') no-repeat center center;
+            background-size: contain; /* Ou 'cover' selon tes préférences */
+            text-align: center;
         }
         .logo-img {
-            max-width: 200px;
+            max-width: 180px;
             height: auto;
-            filter: drop-shadow(0px 0px 10px rgba(212, 175, 55, 0.5));
+            filter: drop-shadow(0px 0px 15px rgba(212, 175, 55, 0.6));
             margin-bottom: 20px;
         }
-        h1 { color: var(--gold); letter-spacing: 4px; text-transform: uppercase; margin: 10px 0; }
+        h1 { color: var(--gold); letter-spacing: 4px; text-transform: uppercase; margin: 10px 0; font-size: 3em; }
         
-        /* Sections Détail */
         .section {
             padding: 80px 20px;
             max-width: 900px;
@@ -42,9 +45,7 @@
             border-bottom: 1px solid #222;
             transition: 0.4s;
         }
-        .section:hover {
-            background: rgba(212, 175, 55, 0.02);
-        }
+        .section:hover { background: rgba(212, 175, 55, 0.02); }
         .section h2 {
             color: var(--gold);
             font-size: 2.5em;
@@ -71,42 +72,37 @@
             background: #1a1a1a;
         }
 
-        /* Contact Section */
         #contact {
             padding: 100px 20px;
             background: var(--gold);
             color: #000;
+            text-align: center;
         }
-        #contact h2 { color: #000; }
+        #contact h2 { color: #000; margin-bottom: 20px; }
         .contact-links {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 20px;
             flex-wrap: wrap;
             margin-top: 40px;
         }
         .contact-btn {
-            padding: 15px 35px;
+            padding: 15px 30px;
             background: #000;
             color: var(--gold);
             text-decoration: none;
             font-weight: bold;
             border-radius: 50px;
-            font-size: 1.1em;
             transition: 0.3s;
         }
-        .contact-btn:hover {
-            transform: scale(1.1);
-            background: #222;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
+        .contact-btn:hover { transform: scale(1.1); background: #222; }
         footer { padding: 40px; color: #555; text-align: center; }
     </style>
 </head>
 <body>
 
 <header>
-    <img src="ton-logo.png" alt="Lion Tech Logo" class="logo-img">
+    <img src="logo-lion.png" alt="Lion Tech Logo" class="logo-img">
     <h1>LION TECH HOLDING</h1>
     <p>Expertise Multidisciplinaire | <strong>Mama Daniel Dilane</strong></p>
 </header>
@@ -114,60 +110,42 @@
 <section class="section">
     <h2>🛡️ DevSecOps & Ingénierie</h2>
     <div class="content-grid">
-        <div class="feature-item">
-            <strong>Développement Full-Stack :</strong> Conception d'applications robustes avec Flutter et Node.js (Projet SAP BTP).
-        </div>
-        <div class="feature-item">
-            <strong>Cybersécurité :</strong> Audits de vulnérabilité, sécurisation des infrastructures réseaux et simulation de défense.
-        </div>
-        <div class="feature-item">
-            <strong>Automatisation :</strong> Mise en place de pipelines CI/CD et gestion de bases de données MongoDB sécurisées.
-        </div>
+        <div class="feature-item"><strong>Développement Full-Stack :</strong> Conception d'applications robustes.</div>
+        <div class="feature-item"><strong>Cybersécurité :</strong> Audits de vulnérabilité et sécurisation réseau.</div>
+        <div class="feature-item"><strong>Automatisation :</strong> Pipelines CI/CD et MongoDB sécurisé.</div>
     </div>
 </section>
 
 <section class="section">
     <h2>📈 Trading & Marchés Financiers</h2>
     <div class="content-grid">
-        <div class="feature-item">
-            <strong>Analyse Quantitative :</strong> Étude approfondie des graphiques et indicateurs pour une prise de décision stratégique.
-        </div>
-        <div class="feature-item">
-            <strong>Algorithmes de Trading :</strong> Développement d'outils d'aide à la décision pour optimiser la rentabilité.
-        </div>
-        <div class="feature-item">
-            <strong>Gestion de Portefeuille :</strong> Stratégies de couverture et diversification d'actifs financiers mondiaux.
-        </div>
+        <div class="feature-item"><strong>Analyse Quantitative :</strong> Étude approfondie des marchés.</div>
+        <div class="feature-item"><strong>Trading Algorithmique :</strong> Développement d'outils d'optimisation.</div>
+        <div class="feature-item"><strong>Gestion d'Actifs :</strong> Stratégies de couverture mondiales.</div>
     </div>
 </section>
 
 <section class="section">
     <h2>🎥 Marketing Digital & Création</h2>
     <div class="content-grid">
-        <div class="feature-item">
-            <strong>Production Audiovisuelle :</strong> Shooting photo professionnel et montage vidéo haute définition.
-        </div>
-        <div class="feature-item">
-            <strong>Branding :</strong> Création d'identités visuelles percutantes et gestion de l'image de marque.
-        </div>
-        <div class="feature-item">
-            <strong>Stratégie Digitale :</strong> Campagnes publicitaires et optimisation de la présence sur les réseaux sociaux.
-        </div>
+        <div class="feature-item"><strong>Production Audiovisuelle :</strong> Photo et vidéo haute définition.</div>
+        <div class="feature-item"><strong>Branding :</strong> Identités visuelles et image de marque.</div>
+        <div class="feature-item"><strong>Stratégie Digitale :</strong> Campagnes publicitaires ciblées.</div>
     </div>
 </section>
 
 <section id="contact">
     <h2>🦁 Contactez le Siège</h2>
-    <p>Prêt à collaborer avec Lion Tech Holding ? Choisissez votre canal :</p>
+    <p>Prêt à collaborer avec Lion Tech Holding ?</p>
     <div class="contact-links">
-        <a href="https://wa.me/237XXXXXXXXX" class="contact-btn">WhatsApp Direct</a>
-        <a href="https://www.linkedin.com/in/votre-profil" class="contact-btn">LinkedIn</a>
-        <a href="mailto:votre-email@gmail.com" class="contact-btn">Email Pro</a>
+        <a href="https://wa.me/237693316839" class="contact-btn">WhatsApp</a>
+        <a href="https://www.linkedin.com/in/ton-profil" class="contact-btn">LinkedIn</a>
+        <a href="mailto:danielmama881@gmail.com" class="contact-btn">Email</a>
     </div>
 </section>
 
 <footer>
-    &copy; 2026 Lion Tech Holding - Mama Daniel Dilane. Tous droits réservés.
+    &copy; 2026 Lion Tech Holding - Mama Daniel Dilane.
 </footer>
 
 </body>
