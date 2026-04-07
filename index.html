@@ -5,18 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lion Tech Holding | Mama Daniel Dilane</title>
     <style>
-        :root {
-            --gold: #d4af37;
-            --dark: #0a0a0a;
-            --card-bg: #111;
-        }
-        body {
-            background-color: var(--dark);
-            color: #ffffff;
-            font-family: 'Segoe UI', Roboto, sans-serif;
-            margin: 0;
-            line-height: 1.6;
-        }
+        :root { --gold: #d4af37; --dark: #0a0a0a; --card-bg: #111; }
+        body { background-color: var(--dark); color: #ffffff; font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; line-height: 1.6; }
+        
         header {
             height: 100vh;
             display: flex;
@@ -24,123 +15,78 @@
             justify-content: center;
             align-items: center;
             border-bottom: 2px solid var(--gold);
-            /* Ajout du Lion en Background */
-            background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.7)), 
-                        url('logo-lion.png') no-repeat center center;
-            background-size: contain; /* Ou 'cover' selon tes préférences */
+            /* On met une couleur de secours si l'image ne charge pas */
+            background: linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.8)), #0a0a0a;
+            background-image: linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.8)), url('logo-lion.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
             text-align: center;
         }
+
         .logo-img {
             max-width: 180px;
             height: auto;
             filter: drop-shadow(0px 0px 15px rgba(212, 175, 55, 0.6));
             margin-bottom: 20px;
         }
-        h1 { color: var(--gold); letter-spacing: 4px; text-transform: uppercase; margin: 10px 0; font-size: 3em; }
+
+        h1 { color: var(--gold); letter-spacing: 4px; text-transform: uppercase; margin: 10px 0; font-size: clamp(1.5em, 5vw, 3em); }
         
-        .section {
-            padding: 80px 20px;
-            max-width: 900px;
-            margin: 0 auto;
-            border-bottom: 1px solid #222;
-            transition: 0.4s;
-        }
-        .section:hover { background: rgba(212, 175, 55, 0.02); }
-        .section h2 {
-            color: var(--gold);
-            font-size: 2.5em;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .content-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-            text-align: left;
-            margin-top: 30px;
-        }
+        .section { padding: 60px 20px; max-width: 900px; margin: 0 auto; border-bottom: 1px solid #222; }
+        .section h2 { color: var(--gold); font-size: 2em; display: flex; align-items: center; gap: 15px; }
+        
         .feature-item {
             background: var(--card-bg);
             padding: 20px;
+            margin-top: 15px;
             border-left: 4px solid var(--gold);
             border-radius: 0 10px 10px 0;
             transition: 0.3s;
         }
-        .feature-item:hover {
-            transform: translateX(10px);
-            background: #1a1a1a;
-        }
+        .feature-item:hover { transform: translateX(10px); background: #1a1a1a; }
 
-        #contact {
-            padding: 100px 20px;
-            background: var(--gold);
-            color: #000;
-            text-align: center;
-        }
-        #contact h2 { color: #000; margin-bottom: 20px; }
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-        .contact-btn {
-            padding: 15px 30px;
-            background: #000;
-            color: var(--gold);
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 50px;
-            transition: 0.3s;
-        }
-        .contact-btn:hover { transform: scale(1.1); background: #222; }
-        footer { padding: 40px; color: #555; text-align: center; }
+        #contact { padding: 80px 20px; background: var(--gold); color: #000; text-align: center; }
+        .contact-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px; }
+        .contact-btn { padding: 12px 25px; background: #000; color: var(--gold); text-decoration: none; font-weight: bold; border-radius: 50px; }
+        
+        footer { padding: 30px; color: #555; text-align: center; font-size: 0.9em; }
     </style>
 </head>
 <body>
 
 <header>
-    <img src="logo-lion.png" alt="Lion Tech Logo" class="logo-img">
+    <img src="logo-lion.png" alt="Lion Tech Logo" class="logo-img" onerror="this.style.display='none'">
     <h1>LION TECH HOLDING</h1>
     <p>Expertise Multidisciplinaire | <strong>Mama Daniel Dilane</strong></p>
 </header>
 
 <section class="section">
     <h2>🛡️ DevSecOps & Ingénierie</h2>
-    <div class="content-grid">
-        <div class="feature-item"><strong>Développement Full-Stack :</strong> Conception d'applications robustes.</div>
-        <div class="feature-item"><strong>Cybersécurité :</strong> Audits de vulnérabilité et sécurisation réseau.</div>
-        <div class="feature-item"><strong>Automatisation :</strong> Pipelines CI/CD et MongoDB sécurisé.</div>
-    </div>
+    <div class="feature-item"><strong>Développement Full-Stack :</strong> Conception d'applications robustes.</div>
+    <div class="feature-item"><strong>Cybersécurité :</strong> Audits de vulnérabilité et sécurisation réseau.</div>
+    <div class="feature-item"><strong>Automatisation :</strong> Pipelines CI/CD et MongoDB sécurisé.</div>
 </section>
 
 <section class="section">
-    <h2>📈 Trading & Marchés Financiers</h2>
-    <div class="content-grid">
-        <div class="feature-item"><strong>Analyse Quantitative :</strong> Étude approfondie des marchés.</div>
-        <div class="feature-item"><strong>Trading Algorithmique :</strong> Développement d'outils d'optimisation.</div>
-        <div class="feature-item"><strong>Gestion d'Actifs :</strong> Stratégies de couverture mondiales.</div>
-    </div>
+    <h2>📈 Trading & Finance</h2>
+    <div class="feature-item"><strong>Analyse Quantitative :</strong> Étude approfondie des marchés.</div>
+    <div class="feature-item"><strong>Trading Algorithmique :</strong> Outils d'optimisation de performance.</div>
+    <div class="feature-item"><strong>Gestion d'Actifs :</strong> Stratégies de couverture mondiales.</div>
 </section>
 
 <section class="section">
     <h2>🎥 Marketing Digital & Création</h2>
-    <div class="content-grid">
-        <div class="feature-item"><strong>Production Audiovisuelle :</strong> Photo et vidéo haute définition.</div>
-        <div class="feature-item"><strong>Branding :</strong> Identités visuelles et image de marque.</div>
-        <div class="feature-item"><strong>Stratégie Digitale :</strong> Campagnes publicitaires ciblées.</div>
-    </div>
+    <div class="feature-item"><strong>Production Audiovisuelle :</strong> Photo et vidéo haute définition.</div>
+    <div class="feature-item"><strong>Branding :</strong> Identités visuelles et image de marque.</div>
+    <div class="feature-item"><strong>Stratégie Digitale :</strong> Campagnes publicitaires ciblées.</div>
 </section>
 
 <section id="contact">
     <h2>🦁 Contactez le Siège</h2>
-    <p>Prêt à collaborer avec Lion Tech Holding ?</p>
     <div class="contact-links">
         <a href="https://wa.me/237693316839" class="contact-btn">WhatsApp</a>
-        <a href="https://www.linkedin.com/in/ton-profil" class="contact-btn">LinkedIn</a>
-        <a href="mailto:danielmama881@gmail.com" class="contact-btn">Email</a>
+        <a href="mailto:danielmama881@gmail.com" class="contact-btn">Email Pro</a>
     </div>
 </section>
 
